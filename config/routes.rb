@@ -1,4 +1,9 @@
 SurveyDanAlex::Application.routes.draw do
+
+  resources :surveys, except: [:update, :destroy] do
+    resources :questions
+  end
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
