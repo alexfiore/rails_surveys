@@ -7,7 +7,7 @@
     <h3><%= question.content %></h3>
     <ul>
       <% question.choices.each do |choice| %>
-        <li><%= choice %></li>
+        <li><%= choice.content %></li>
       <% end %>
     </ul>
   <% end %>
