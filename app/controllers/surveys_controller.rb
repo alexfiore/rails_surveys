@@ -1,7 +1,7 @@
 class SurveysController < ApplicationController
 
   def index 
-    
+    @surveys = Survey.order('created_at DESC')
   end
 
   def create
@@ -16,6 +16,7 @@ class SurveysController < ApplicationController
   end
 
   def show
+    @survey = Survey.find(params[:id])
   end
 
 end

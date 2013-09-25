@@ -23,8 +23,14 @@ end
 gem 'jquery-rails'
 
 group :development, :test do
-  gem 'factory_girl'
-  gem 'rspec-rails', '~> 2.0'
+  gem 'faker'
+  gem 'factory_girl_rails'
+  gem 'rspec-rails', '~> 2.12'
+  gem 'database_cleaner'
+end
+
+group :test do
+  gem "shoulda-matchers"
 end
 
 # To use ActiveModel has_secure_password
