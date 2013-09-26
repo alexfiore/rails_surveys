@@ -1,0 +1,5 @@
+<%= f.label :content %><br>
+<%= f.text_field :content, placeholder: "What would you like to know?" %><br>
+<%= f.fields_for :choices do |builder| %>
+  <%= render 'choice_fields', :f => builder %>
+<% end %>

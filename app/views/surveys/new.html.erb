@@ -5,15 +5,8 @@
   <%= f.text_field :title, placeholder: "Give me a title" %><br>
   <%= f.label :content %><br>
   <%= f.text_area :content, placeholder: "Give me a short description for your survey", rows: 4, cols: 50  %><br>
-
-    <%= f.fields_for :questions do |q1| %>
-      <%= q1.label :content %><br>
-      <%= q1.text_field :content, placeholder: "What would you like to know?" %><br>
-      <%= q1.fields_for :choices do |c1| %>
-        <%= c1.label :content %><br>
-        <%= c1.text_field :content, placeholder: "Choice" %><br>
-      <% end %>
-    <% end %>
-
+  <%= f.fields_for :questions do |builder| %>
+    <%= render 'question_fields', :f => builder %>
+  <% end %>
   <%= f.submit "Hooray!" %>
 <% end %>

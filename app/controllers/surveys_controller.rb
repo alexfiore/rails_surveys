@@ -11,11 +11,8 @@ class SurveysController < ApplicationController
 
   def new
     @survey = Survey.new  
-    @question = Question.new
-    @survey.questions << @question
-    @choice1 = Choice.new
-    @choice2 = Choice.new
-    @question.choices << @choice1 << @choice2
+    3.times { @question = @survey.questions.build 
+    2.times { @question.choices.build } }
   end
 
   def edit
